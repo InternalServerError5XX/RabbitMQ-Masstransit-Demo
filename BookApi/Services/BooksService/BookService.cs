@@ -1,4 +1,4 @@
-﻿using BookApi.Models;
+﻿using Contracts.Models;
 
 namespace BookApi.Services.BooksService
 {

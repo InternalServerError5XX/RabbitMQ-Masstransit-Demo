@@ -1,6 +1,6 @@
-﻿using Contracts.Models;
+﻿using MainApi.Models;
 
-namespace BookApi.Messages
+namespace MainApi.Messages
 {
     public class BooksMessage
     {

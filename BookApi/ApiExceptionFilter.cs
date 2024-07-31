@@ -4,7 +4,7 @@ using MassTransit;
 
 namespace BookApi
 {
-    public class ApiExceptionFilter(IPublishEndpoint publishEndpoint) : IAsyncExceptionFilter
+    public class ApiExceptionFilter(IPublishEndpoint publishEndpoint, ILogger<ApiExceptionFilter> logger) : IAsyncExceptionFilter
     {
         public async Task OnExceptionAsync(ExceptionContext context)
         {
@@ -14,6 +14,7 @@ namespace BookApi
                 StackTrace = context.Exception.StackTrace
             };
 
+            logger.LogError($"Error: {errorMessage}");
             context.Result = new BadRequestObjectResult(errorMessage);
             context.ExceptionHandled = true;
         }

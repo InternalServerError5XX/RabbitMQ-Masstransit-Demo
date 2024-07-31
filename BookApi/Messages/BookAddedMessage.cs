@@ -1,6 +1,6 @@
-﻿using BookApi.Models;
+﻿using Contracts.Models;
 
-namespace BookApi.Messages
+namespace Contracts.Messages
 {
     public class BookAddedMessage
     {
